@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">DELICIOUS RECIPES</h1>
+            <nav>
+                <div class="menu-icon">☰</div>
+                <ul class="nav-list">
+                    <li>HOME</li>
+                    <li>ABOUT</li>
+                    <li>RECIPES</li>
+                    <li>CONTACT</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-section">
+            <h2>WELCOME TO OUR RECIPE COLLECTION</h2>
+            <p>Search mouth-watering recipes to satisfy your cravings</p>
+            <form action="a" class="search-box" id="searchForm">
+                <input type="text" placeholder="Search recipe..." id="searchInput" list="recipeNames">
+                <datalist id="recipeNames">
+                    <option value="Custard">
+                    <option value="Choco Lava Cake">
+                    <option value="Pudding">
+                    <option value="Pancake">
+                </datalist>
+                <button type="submit">SEARCH</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="recipes-container">
+        <h1>FEATURED RECIPES</h1>
+        <div class="recipe-grid">
+            <!-- Card 1 -->
+            <div class="recipe-card">
+                <img src="OIP.webp" alt="Custard">
+                <h2>Custard</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="#custard">View Recipe</a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="recipe-card">
+                <img src="download1.webp" alt="Choco Lava Cake">
+                <h2>Choco Lava Cake</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="#choco-lava-cake">View Recipe</a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="recipe-card">
+                <img src="dd.webp" alt="Pudding">
+                <h2>Pudding</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="#pudding">View Recipe</a>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="recipe-card">
+                <img src="p.webp" alt="Pancake">
+                <h2>Pancake</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="#pancake">View Recipe</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <p>&copy; 2026 DELICIOUS RECIPES</p>
+        </div>
+    </footer>
+
+    <!-- Recipe Popups (CSS :target trick — no JS needed for these) -->
+    <div class="recipe-popup" id="custard">
+        <div class="recipe-popup-box">
+            <a href="#" class="recipe-popup-close">&times;</a>
+            <img src="OIP.webp" alt="Custard">
+            <h2>Custard</h2>
+            <h3>Ingredients</h3>
+            <ul>
+                <li>2 cups milk</li>
+                <li>4 tbsp sugar</li>
+                <li>2 tbsp custard powder</li>
+                <li>1/2 tsp vanilla essence</li>
+            </ul>
+            <h3>Steps</h3>
+            <ol>
+                <li>Heat milk in a pan over medium flame.</li>
+                <li>Mix custard powder with a little cold milk to form a paste.</li>
+                <li>Add sugar to the hot milk and stir.</li>
+                <li>Slowly add the custard paste, stirring continuously until thick.</li>
+                <li>Add vanilla essence, cool, and refrigerate before serving.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="recipe-popup" id="choco-lava-cake">
+        <div class="recipe-popup-box">
+            <a href="#" class="recipe-popup-close">&times;</a>
+            <img src="download1.webp" alt="Choco Lava Cake">
+            <h2>Choco Lava Cake</h2>
+            <h3>Ingredients</h3>
+            <ul>
+                <li>100g dark chocolate</li>
+                <li>100g butter</li>
+                <li>2 eggs</li>
+                <li>50g sugar</li>
+                <li>2 tbsp flour</li>
+            </ul>
+            <h3>Steps</h3>
+            <ol>
+                <li>Melt chocolate and butter together.</li>
+                <li>Whisk eggs and sugar until fluffy, then fold in the chocolate mix.</li>
+                <li>Gently fold in the flour.</li>
+                <li>Pour into greased ramekins and bake at 200°C for 10-12 minutes.</li>
+                <li>Serve immediately while the center is still molten.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="recipe-popup" id="pudding">
+        <div class="recipe-popup-box">
+            <a href="#" class="recipe-popup-close">&times;</a>
+            <img src="dd.webp" alt="Pudding">
+            <h2>Pudding</h2>
+            <h3>Ingredients</h3>
+            <ul>
+                <li>2 cups milk</li>
+                <li>3 tbsp sugar (for caramel)</li>
+                <li>3 eggs</li>
+                <li>1/2 cup sugar</li>
+                <li>1 tsp vanilla essence</li>
+            </ul>
+            <h3>Steps</h3>
+            <ol>
+                <li>Melt sugar to a golden caramel and coat the base of a mold.</li>
+                <li>Whisk eggs, milk, sugar, and vanilla essence together.</li>
+                <li>Pour the mixture over the caramel in the mold.</li>
+                <li>Steam or bake in a water bath for 30-40 minutes.</li>
+                <li>Cool, refrigerate, then invert onto a plate to serve.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="recipe-popup" id="pancake">
+        <div class="recipe-popup-box">
+            <a href="#" class="recipe-popup-close">&times;</a>
+            <img src="p.webp" alt="Pancake">
+            <h2>Pancake</h2>
+            <h3>Ingredients</h3>
+            <ul>
+                <li>1 cup flour</li>
+                <li>1 egg</li>
+                <li>3/4 cup milk</li>
+                <li>1 tbsp sugar</li>
+                <li>1 tsp baking powder</li>
+            </ul>
+            <h3>Steps</h3>
+            <ol>
+                <li>Whisk flour, sugar, and baking powder together.</li>
+                <li>Add egg and milk, whisk until smooth batter forms.</li>
+                <li>Heat a lightly greased pan over medium heat.</li>
+                <li>Pour a ladle of batter and cook until bubbles form, then flip.</li>
+                <li>Cook the other side until golden, then serve warm.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Search: matches typed text to a recipe name and jumps to its popup. -->
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            var query = document.getElementById('searchInput').value.trim().toLowerCase();
+            var routes = {
+                'custard': 'custard',
+                'choco lava cake': 'choco-lava-cake',
+                'lava cake': 'choco-lava-cake',
+                'pudding': 'pudding',
+                'pancake': 'pancake'
+            };
+            var match = routes[query];
+            if (match) {
+                window.location.hash = match;
+            } else {
+                alert('No recipe found for "' + query + '". Try: Custard, Choco Lava Cake, Pudding, or Pancake.');
+            }
+        });
+    </script>
+</body>
+</html>

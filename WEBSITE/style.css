@@ -1,0 +1,257 @@
+ 
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+  font-family: sans-serif; 
+} 
+
+body { 
+  width: 100%; 
+  min-height: 100vh; 
+  background: rgb(235, 228, 232); 
+} 
+
+/* Fixed: Changed class selector to target header tag directly */
+header { 
+  height: 60px; 
+  width: 100%; 
+  background: black; 
+  color: white; /* Added to make text/logo readable against black background */
+  display: flex;
+  align-items: center;
+} 
+
+.container { 
+  width: 90%; 
+  margin: 0 auto; 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+} 
+
+/* Fixed: Hid the mobile hamburger menu icon for the desktop view */
+.menu-icon {
+  display: none;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li { 
+  list-style: none; 
+  margin-left: 20px; /* Changed from margin-right for clean right alignment */
+  font-weight: 600; 
+  cursor: pointer;
+} 
+
+.logo { 
+  font-size: 25px;
+} 
+.hero { 
+  width: 100%; 
+  height: 600px; 
+  /* Adds a smooth semi-transparent white screen layer over a beautiful fresh cooking ingredient background picture */
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+              url("images.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: black;
+  text-align: center;
+  padding: 140px 0;
+  margin-bottom: 20px;
+  /* Centers your text boxes cleanly within the background picture bounds */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-section {
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.hero h2 {
+  font-size: 42px; /* Increased size to make your welcome heading stand out */
+  font-weight: 800;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+
+
+.search-box {
+  max-width: 550px;
+  margin: 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-box input {
+  width: 70%;
+  padding: 10px;
+  outline: none;
+  border-radius: 5px 0 0 5px;
+  font-size: 1rem;
+  border: 1px solid rgb(182, 30, 30);
+  border-right: none; /* Prevents overlapping double borders with the button */
+  background: white;
+}
+
+.search-box button {
+  padding: 10px 20px;
+  outline: none;
+  border: 1px solid rgb(182, 30, 30);
+  border-radius: 0px 5px 5px 0px;
+  font-size: 1rem;
+  background: rgb(182, 30, 30);
+  color: white;
+  cursor: pointer;
+}
+
+/* Fixed: Adjusted padding on the target container class name */
+.recipes-container {
+  padding: 50px 0;
+}
+
+/* Fixed: Changed 'recipes h1' to correct class selector '.recipes-container h1' */
+.recipes-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+/* Fixed: Changed class to '.recipe-grid' to exactly match updated HTML structure */
+.recipe-grid { 
+  width: 90%; 
+  margin: 0 auto; 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 20px; /* Replaced column-gap with gap for cleaner uniform grid layout */
+}
+
+.recipe-card {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid white;
+  overflow: hidden; /* Ensures image corners stay rounded inside the card */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Adds a modern touch shadow */
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  /* Fixed: Appended missing 'px' units to border radius values */
+  border-top-left-radius: 10px; 
+  border-top-right-radius: 10px;
+}
+
+.recipe-card h2 {
+  font-size: 18px;
+  padding: 20px 20px 5px 20px; /* Fixed spacing alignment */
+}
+
+/* Added: Styled card description text layout */
+.recipe-card p {
+  padding: 0 20px 20px 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.recipe-card a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background: black;
+  color: white;
+  padding: 15px 0;
+  font-weight: bold;
+}
+
+/* Added: Centered layout for the footer */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  background: #333;
+  color: white;
+  margin-top: 40px;
+}
+.recipe-popup {
+  display: none;               /* hidden by default */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* The :target trick: browser shows the element whose id matches
+   the current URL's #hash (i.e. the link that was clicked) */
+.recipe-popup:target {
+  display: flex;
+}
+
+.recipe-popup-box {
+  background: white;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 30px;
+  position: relative;
+}
+
+.recipe-popup-box img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.recipe-popup-box h2 {
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.recipe-popup-box h3 {
+  margin-top: 15px;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.recipe-popup-box ul,
+.recipe-popup-box ol {
+  padding-left: 20px;
+}
+
+.recipe-popup-box li {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #444;
+}
+
+.recipe-popup-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 28px;
+  line-height: 1;
+  color: #333;
+  text-decoration: none;
+}
+
